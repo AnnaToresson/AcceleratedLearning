@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 
 namespace Modul2
@@ -13,9 +14,9 @@ namespace Modul2
             //EnterYourName();
             //ForEnterYourName();
             //RadKolumn();
-            ReverseRadKolumn();
+            //ReverseRadKolumn();
             //ForeachEnterNames();
-            //EnterNumber(5);
+            EnterNumber();
             //GuessTheNumber();
             //EnterNumber2();
         }
