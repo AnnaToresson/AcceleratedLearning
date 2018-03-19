@@ -7,7 +7,7 @@ namespace Modul3
     {
         static void Main(string[] args)
         {
-            
+
             //WhatsYourName1();
             //WhatsYourName();
             StringCreation();
@@ -26,27 +26,27 @@ namespace Modul3
             Console.Write("What is your favorite character? ");
             var character = char.Parse(Console.ReadLine());
 
-            
+
             Console.WriteLine("\nThank you!\n");
-           
+
             Console.ForegroundColor = ConsoleColor.Green;
 
-            
+
 
             Console.WriteLine("Your name is: " + name);
-            
 
-            int pension = 65-Convert.ToInt32(age);
+
+            int pension = 65 - Convert.ToInt32(age);
             Console.WriteLine("You have " + pension + " years until retirement");
-            
-             
+
+
 
             if (Char.IsDigit(character))
             {
                 Console.WriteLine("Your favorite character is " + character);
             }
             else
-                Console.WriteLine("You dont't like numbers"); 
+                Console.WriteLine("You dont't like numbers");
 
 
 
@@ -78,6 +78,7 @@ namespace Modul3
             var fruit1 = Console.ReadLine();
             Console.Write("Enter fruit 2: ");
             var fruit2 = Console.ReadLine();
+            //Försök hitta den här
             Console.Write("Enter fruit 3: ");
             var fruit3 = Console.ReadLine();
             string str = $"You entered three fruits: {fruit1}, {fruit2}, {fruit3}!";
@@ -85,12 +86,12 @@ namespace Modul3
             //Console.WriteLine("You entered three fruits: " + fruit1 + ", " + fruit2 + ", " + fruit3 + "!");
             //Console.WriteLine("You entered three fruits: {0}, {1}, {2}!", fruit1, fruit2, fruit3);
             //Console.WriteLine($"You entered three fruits: {fruit1}, {fruit2}, {fruit3}!");
-        
+
             Console.WriteLine(str);
             StringBuilder stringBuilder = new StringBuilder("");
             stringBuilder.Append(str);
             Console.WriteLine(stringBuilder);
-            
+
         }
 
         private static void WhatsYourName1()
@@ -121,6 +122,6 @@ namespace Modul3
 
         }
 
-       
+
     }
 }

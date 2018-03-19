@@ -3,7 +3,7 @@ using System.Text;
 
 namespace Modul53
 {
-    
+
     public class Program
     {
         public static void Main(string[] args)
@@ -11,7 +11,7 @@ namespace Modul53
             Run();
         }
 
-        
+
 
         public static void Run()
         {
@@ -32,6 +32,7 @@ namespace Modul53
             {
                 StringBuilder stringBuilder = new StringBuilder("Let's go dancing.");
                 Console.Write("Before" + "\t\t" + $"sb = {stringBuilder}");
+                //Hittar du den här?
                 Console.WriteLine();
 
                 ChangeStringBuilder(stringBuilder);
@@ -42,7 +43,7 @@ namespace Modul53
             Console.WriteLine();
         }
 
-       
+
         private static void ChangePoint(Point point)
         {
             point.X = 12;
@@ -67,6 +68,7 @@ namespace Modul53
 
         public override string ToString()
         {
+            //Hej
             return $"({X},{Y})";
         }
     }
