@@ -1,28 +1,56 @@
 ﻿using System;
 using System.Text;
+using System.Collections.Generic;
 
 namespace ModulClass
 {
+    public class PointList
+    {
+        private readonly List<Point> _pointList;
+
+        public PointList()
+        {
+            _pointList = new List<Point>();
+        }
+
+        public void Add(Point point)
+        {
+            _pointList.Add(point);
+        }
+
+        public void Print()
+        {
+            foreach (var point in _pointList)
+            {
+                Console.WriteLine(point.ToString());
+            }
+        }
+    }
 
     public class Program
     {
-        
+
         public static void Main(string[] args)
         {
-            
+
             Run();
         }
 
-                
+
         public static void Run()
         {
 
             {
+                var pointList = new PointList();
                 string fruit = "Apple";
                 int age = 50;
                 var date = DateTime.Now;
-                
+
                 Point_Struct point = new Point_Struct(3, 4);
+
+                pointList.Add(new Point(10, 20));
+                pointList.Add(new Point(10, 15));
+                pointList.Add(new Point(10, 12));
 
 
                 Console.Write("Before" + "\t\t\t" + $"fruit ={fruit}");
@@ -39,7 +67,7 @@ namespace ModulClass
                 Console.WriteLine();
 
                 Console.Write("Before" + "\t\t\t" + $"date ={ date}");
-                date=ChangeDate();
+                date = ChangeDate();
                 Console.WriteLine();
                 Console.Write("After" + "\t\t\t" + $"date ={ date}\n");
                 Console.WriteLine();
@@ -49,8 +77,10 @@ namespace ModulClass
                 Console.WriteLine();
                 Console.Write("After" + "\t\t\t" + $"point ={ point}\n");
                 Console.WriteLine();
+
+                pointList.Print();
             }
-            
+
             Console.WriteLine();
         }
 
@@ -61,7 +91,7 @@ namespace ModulClass
                 X = x;
                 Y = y;
             }
-            
+
             public int X { get; set; }
             public int Y { get; set; }
 
@@ -71,7 +101,7 @@ namespace ModulClass
             }
 
         }
-        
+
 
         private static void ChangeFruit(out string fruit)
         {
@@ -81,12 +111,12 @@ namespace ModulClass
         private static void ChangeAge(out int age)
         {
             age = 75;
-           
+
         }
-        
+
         private static DateTime ChangeDate()
         {
-            
+
             return DateTime.Now.AddDays(1);
         }
         private static void ChangePoint(Point_Struct point)
@@ -95,7 +125,7 @@ namespace ModulClass
             point.Y = 50;
         }
 
-        
+
     }
 
     public class Point

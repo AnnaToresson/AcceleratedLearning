@@ -168,7 +168,7 @@ namespace Modul2
                 {
                     //La till 2 mellanslag mellan varje namnutskrift
                     Console.Write("{0,4}{1}", yourName, test);
-                    Console.Write("  ");
+                    //Console.Write("  ");
                 }
                 Console.WriteLine();
             }
