@@ -32,7 +32,6 @@ namespace Modul53
             {
                 StringBuilder stringBuilder = new StringBuilder("Let's go dancing.");
                 Console.Write("Before" + "\t\t" + $"sb = {stringBuilder}");
-                //Hittar du den här?
                 Console.WriteLine();
 
                 ChangeStringBuilder(stringBuilder);
@@ -60,7 +59,7 @@ namespace Modul53
     {
         public Point(int x, int y)
         {
-            X = x;
+            X = y;
             Y = y;
         }
         public int X { get; set; }
@@ -68,7 +67,6 @@ namespace Modul53
 
         public override string ToString()
         {
-            //Hej
             return $"({X},{Y})";
         }
     }
