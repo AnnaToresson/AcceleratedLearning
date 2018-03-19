@@ -59,7 +59,7 @@ namespace Modul53
     {
         public Point(int x, int y)
         {
-            X = y;
+            X = x;
             Y = y;
         }
         public int X { get; set; }
