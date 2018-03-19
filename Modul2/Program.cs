@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 
 namespace Modul2
@@ -14,9 +13,9 @@ namespace Modul2
             //EnterYourName();
             //ForEnterYourName();
             //RadKolumn();
-            //ReverseRadKolumn();
+            ReverseRadKolumn();
             //ForeachEnterNames();
-            EnterNumber();
+            //EnterNumber(5);
             //GuessTheNumber();
             //EnterNumber2();
         }
@@ -35,22 +34,22 @@ namespace Modul2
             Console.WriteLine();
 
             if (sleepTime < 6)
-                Console.WriteLine("You've only slept " + sleepTime+" hours. Go back to bed!");
+                Console.WriteLine("You've only slept " + sleepTime + " hours. Go back to bed!");
 
-            else if(sleepTime>12)
+            else if (sleepTime > 12)
                 Console.WriteLine($"You've slept {sleepTime} hours. That's a lot.");
 
 
             else
                 Console.WriteLine($"You've slept well. ({sleepTime} hours)");
 
-            
+
 
             Console.ForegroundColor = ConsoleColor.White;
 
         }
 
-       
+
         private static void RepeatNameWithWhile()
         {
             Console.Write("Enter your name: ");
@@ -62,7 +61,7 @@ namespace Modul2
             var decide = Console.ReadLine();
             // var decide = Convert.ToInt32(Console.ReadLine());
 
-            while (repeat<10)
+            while (repeat < 10)
             {
                 if (decide == "line")
                 {
@@ -90,14 +89,14 @@ namespace Modul2
                     }
                     Console.WriteLine();
                 }
-                if(repeat>10)
+                if (repeat > 10)
                     Console.WriteLine("To many times");
 
 
                 break;
 
             }
-           
+
         }
 
         private static void RepeatNameWithFor()
@@ -131,13 +130,13 @@ namespace Modul2
 
             Console.Write("Enter numbers of columns: ");
             int columns = Convert.ToInt32(Console.ReadLine());
-            
 
-            for (int i = 0; i <rows; i++)
+
+            for (int i = 0; i < rows; i++)
             {
                 for (int j = 0; j < columns; j++)
                 {
-                    Console.Write("{0}",yourName +"\t"); 
+                    Console.Write("{0}", yourName + "\t");
 
                 }
                 Console.WriteLine();
@@ -152,11 +151,13 @@ namespace Modul2
             int rows = Convert.ToInt32(Console.ReadLine());
             Console.Write("Enter numbers of columns: ");
             int columns = Convert.ToInt32(Console.ReadLine());
+
+            //TODO Lägga till så att repeat används.
             Console.Write("Enter numbers of times to repeat: ");
             int repeat = Convert.ToInt32(Console.ReadLine());
 
 
-            
+
             var test = Reverse(yourName);
 
 
@@ -164,9 +165,9 @@ namespace Modul2
             {
                 for (int j = 0; j < columns; j++)
                 {
-
+                    //La till 2 mellanslag mellan varje namnutskrift
                     Console.Write("{0,4}{1}", yourName, test);
-
+                    Console.Write("  ");
                 }
                 Console.WriteLine();
             }
@@ -200,7 +201,7 @@ namespace Modul2
             string names = Console.ReadLine() ?? "";
             string[] nameList = names.Split(',');
             Console.ForegroundColor = ConsoleColor.Green;
-            
+
             Console.WriteLine();
 
             foreach (string name in nameList)
@@ -241,36 +242,36 @@ namespace Modul2
             {
                 nameList.Add(name);//Lägger in namnen i listan               
             }
-                        
+
 
             //Console.Write("Enter a surname: ");
             //Console.WriteLine();
             //var surname = Console.ReadLine();
 
-            
+
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine();
 
             bool allowZelda = false;
             if (nameList.Contains("AllowZelda"))
 
-            {                
+            {
                 nameList.Remove("AllowZelda");
                 allowZelda = true;
-                               
+
             }
 
             foreach (var name in nameList)
             {
                 if (name == "Zelda" && !allowZelda)
                     return true;
-                    //break;
+                //break;
 
-                Console.WriteLine(name+" Andersson");
+                Console.WriteLine(name + " Andersson");
 
             }
 
-            
+
             Console.WriteLine();
             Console.ResetColor();
             return false;
@@ -281,22 +282,22 @@ namespace Modul2
         {
             Random randomNumber = new Random();
             int guess = randomNumber.Next(1, 101);
-           
+
             int count = 0;
-            while (count<6)
+            while (count < 6)
             {
                 Console.WriteLine("Guess the number (1-100)");
                 count++;
                 int myGuess = Convert.ToInt32(Console.ReadLine());
                 if (guess == myGuess)
                     Console.WriteLine("Correct");
-                else if (guess>myGuess)
+                else if (guess > myGuess)
                     Console.WriteLine("To low");
                 else
                     Console.WriteLine("To high");
 
             }
-            
+
             Console.WriteLine();
 
         }
@@ -307,9 +308,9 @@ namespace Modul2
             Console.Write("Compare with: ");
             //int compare = Convert.ToInt32(Console.ReadLine());
 
-             Console.ForegroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine();
-                    
+
 
             //answer = (number > compare) ? "higher than": (number < compare) ? "lower than" : "equal";
             string answer = (number > compare) ? "Higher than" : (number == compare) ? "Equal" : "Lower than";
@@ -320,22 +321,22 @@ namespace Modul2
             Console.ResetColor();
             Console.WriteLine();
             return answer;
-           
+
 
         }
 
 
 
 
-        public static void EnterNumber()
+        public static void EnterNumber(int number)
         {
             Console.Write("Enter a number: ");
-            int number = Convert.ToInt32(Console.ReadLine());
+            int number2 = Convert.ToInt32(Console.ReadLine());
 
             Console.Write("Compare with: ");
             int compare = Convert.ToInt32(Console.ReadLine());
 
-            
+
 
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine();
@@ -359,7 +360,7 @@ namespace Modul2
 
         }
 
-        
+
 
     }
 }
